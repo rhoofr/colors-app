@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -12,16 +13,16 @@ import './Navbar.css';
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { format: 'hex', snackbarOpen: false };
+    this.state = { format: 'hex', open: false };
     this.handleFormatChange = this.handleFormatChange.bind(this);
     this.closeSnackbar = this.closeSnackbar.bind(this);
   }
   handleFormatChange(e) {
-    this.setState({ format: e.target.value, snackbarOpen: true });
+    this.setState({ format: e.target.value, open: true });
     this.props.handleChange(e.target.value);
   }
   closeSnackbar() {
-    this.setState({ snackbarOpen: false });
+    this.setState({ open: false });
   }
   render() {
     const { level, changeLevel } = this.props;
@@ -29,7 +30,7 @@ class Navbar extends Component {
     return (
       <header className='Navbar'>
         <div className='logo'>
-          <a href='#'>reactcolorpicker</a>
+          <Link to='/'>reactcolorpicker</Link>
         </div>
         <div className='slider-container'>
           <span>Level: {level}</span>
@@ -52,7 +53,7 @@ class Navbar extends Component {
         </div>
         <Snackbar
           anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-          open={this.state.snackbarOpen}
+          open={this.state.open}
           autoHideDuration={2000}
           message={
             <span id='message-id'>
