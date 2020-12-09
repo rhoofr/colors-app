@@ -5,6 +5,9 @@ import { ChromePicker } from 'react-color';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
+  container: {
+    width: '100%',
+  },
   picker: {
     width: '100% !important',
     marginTop: '2rem',
@@ -60,7 +63,7 @@ class ColorPickerForm extends Component {
     const { paletteIsFull, classes } = this.props;
     const { currentColor, newColorName } = this.state;
     return (
-      <div>
+      <div className={classes.container}>
         <ChromePicker
           color={currentColor}
           onChangeComplete={this.updateCurrentColor}
