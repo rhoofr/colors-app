@@ -1,4 +1,7 @@
 const styles = {
+  container: {
+    width: '100%',
+  },
   picker: {
     width: '100% !important',
     marginTop: '2rem',
