@@ -24,13 +24,13 @@ export default {
     fontSize: '2rem',
   },
   container: {
-    width: '50%',
+    width: '75%',
     display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',
     flexWrap: 'wrap',
     [sizes.down('xl')]: {
-      width: '80%',
+      width: '85%',
     },
     [sizes.down('xs')]: {
       width: '75%',
@@ -50,8 +50,11 @@ export default {
     boxSizing: 'border-box',
     width: '100%',
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 30%)',
+    gridTemplateColumns: 'repeat(4, 25%)',
     gridGap: '1.5rem',
+    [sizes.down('lg')]: {
+      gridTemplateColumns: 'repeat(3, 33.3333%)',
+    },
     [sizes.down('md')]: {
       gridTemplateColumns: 'repeat(2, 50%)',
     },
